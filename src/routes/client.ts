@@ -12,6 +12,11 @@ router.get(
 )
 
 router.get(
+    '/average',
+    clientController.averageAgeClients,
+)
+
+router.get(
     '/:id',
     validate(clientValidator.schemaClientFindOne),
     clientController.findOneClient,

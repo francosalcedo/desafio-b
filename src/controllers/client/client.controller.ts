@@ -1,6 +1,7 @@
 import {Request, Response} from 'express'
 import { successResponse, errorResponse } from '../../helpers'
 import db from '../../database'
+import { QueryTypes } from 'sequelize'
 
 export const allClients = async (req: Request, res: Response) => {
     try {
@@ -40,6 +41,21 @@ export const findOneClient = async (req: Request, res: Response) => {
         })
 
         return successResponse(req, res, { client })
+    } catch (error: any) {
+        console.log(error)
+        return errorResponse(req, res, error.message)
+    }
+}
+
+export const averageAgeClients = async (req: Request, res: Response) => {
+    try {
+        const average = await db.sequelize.query(`select AVG(AGE("birthdate")) from "Clients"`, {
+            type: QueryTypes.SELECT
+        })
+
+        return successResponse(req, res, {
+            average: average[0].avg.years
+        })
     } catch (error: any) {
         console.log(error)
         return errorResponse(req, res, error.message)
