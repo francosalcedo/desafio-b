@@ -1,16 +1,13 @@
 // @ts-ignore
 import { initClient } from '../models/client'
+// @ts-ignore
+import x from '../config/config'
 
 const Sequelize = require('sequelize')
-
 const env = process.env.NODE_ENV || 'development'
-console.log("================================")
-console.log("================================")
-console.log(__dirname)
-console.log("================================")
-console.log("================================")
-console.log("================================")
-const config = require(`../config/config.js`)[env]
+const config = x[env]
+//const config = require('../config/config.js')[env]
+
 
 interface DB {
     [key: string]: any
