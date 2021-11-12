@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "usuario",
+    "password": "123",
+    "database": "backend",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "usuario",
+    "password": "123",
+    "database": "backend",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
