@@ -4,7 +4,13 @@ import { initClient } from '../models/client'
 const Sequelize = require('sequelize')
 
 const env = process.env.NODE_ENV || 'development'
-const config = require(`${__dirname}/../config/config.js`)[env]
+console.log("================================")
+console.log("================================")
+console.log(__dirname)
+console.log("================================")
+console.log("================================")
+console.log("================================")
+const config = require(`../config/config.js`)[env]
 
 interface DB {
     [key: string]: any
