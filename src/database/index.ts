@@ -1,4 +1,5 @@
-import { initClient } from '../models/Client'
+// @ts-ignore
+import { initClient } from '../models/client'
 
 const Sequelize = require('sequelize')
 
